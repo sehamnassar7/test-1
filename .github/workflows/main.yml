@@ -18,7 +18,7 @@ jobs:
         run: docker login --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_PASS }}
 
       - name: 'building docker image'  
-        run: ducker build -t ${{ secrets.DOCKER_USER }}/myimage .
+        run: docker build -t ${{ secrets.DOCKER_USER }}/myimage .
 
       - name: 'pushing to docker hup'  
         run: docker push ${{ secrets.DOCKER_USER }}/myimage
